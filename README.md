@@ -14,5 +14,5 @@ Replication of Wine Quality Classifier from M. Clark's "An Introduction to Machi
 
 Images used in file can be seen in the closed issue, found here: https://github.com/cmrider/problemset1/issues/1. 
 
-Document found here: http://www3.nd.edu/~mclark19/learn/ML.pdf (Wine Quality Classifier on pages 22 through 28.)
+Clark's paper found here: http://www3.nd.edu/~mclark19/learn/ML.pdf (Wine Quality Classifier on pages 22 through 28.)
 
