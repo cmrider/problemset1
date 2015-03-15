@@ -41,6 +41,10 @@ Distribution of residuals:
 > text(treefit3,cex=0.5,digits=3)
 (SEE IMAGE "TREEFIT3.PNG" FOR PLOT BEFORE CHANGING min.dev)
 
+> cut.predictions=cut(predict(treefit3),log(price.deciles),include.lowest=TRUE)
+> plot(x$Longitude, x$Latitude, col=grey(10:2/11)[cut.predictions],pch=20,xlab="Longitude", ylab="Latitude")
+(SEE IMAGE "TREEFIT3PLOT.PNG" FOR PLOT)
+
 > treefit3<-tree(log(MedianHouseValue)~.,data=x, mindev=0.001)
 # Changed min.dev to less than 0.01
 
@@ -62,4 +66,4 @@ Distribution of residuals:
 
 > cut.predictions=cut(predict(treefit3),log(price.deciles),include.lowest=TRUE)
 > plot(x$Longitude, x$Latitude, col=grey(10:2/11)[cut.predictions],pch=20,xlab="Longitude", ylab="Latitude")
-(SEE IMAGE "TREEFIT3PLOT.PNG" FOR PLOT)
+(SEE IMAGE "TREEFIT3PLOTMINDEV.PNG" FOR PLOT)
