@@ -39,7 +39,26 @@ Distribution of residuals:
 
 > plot(treefit3)
 > text(treefit3,cex=0.5,digits=3)
-(SEE IMAGE "TREEFIT3.PNG" FOR PLOT)
+(SEE IMAGE "TREEFIT3.PNG" FOR PLOT BEFORE CHANGING min.dev)
+
+> treefit3<-tree(log(MedianHouseValue)~.,data=x, mindev=0.001)
+# Changed min.dev to less than 0.01
+
+> summary(treefit3)
+
+Regression tree:
+tree(formula = log(MedianHouseValue) ~ ., data = x, mindev = 0.001)
+Variables actually used in tree construction:
+[1] "MedianIncome"   "Latitude"       "Longitude"      "MedianHouseAge" "Households"    
+Number of terminal nodes:  68 
+Residual mean deviance:  0.08803 = 1811 / 20570 
+Distribution of residuals:
+    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+-2.91000 -0.17860 -0.01044  0.00000  0.17050  1.68400 
+
+> plot(treefit3)
+> text(treefit3,cex=0.5,digits=3)
+(SEE IMAGE "TREEFIT3MINDEV.PNG" FOR PLOT AFTER CHANGING min.dev)
 
 > cut.predictions=cut(predict(treefit3),log(price.deciles),include.lowest=TRUE)
 > plot(x$Longitude, x$Latitude, col=grey(10:2/11)[cut.predictions],pch=20,xlab="Longitude", ylab="Latitude")
